@@ -177,9 +177,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------------------------------'
    */
   [_NAV] = LAYOUT_planck_mit(
-    _______,    KC_NO,       KC_MS_WH_LEFT, KC_MS_UP,    KC_MS_WH_RIGHT, LCTL(KC_Q),  LALT(KC_LEFT), LCTL(LSFT(KC_TAB)), LCTL(KC_TAB), LALT(KC_RIGHT),  KC_NO,        _______,
-    _______,    KC_NO,       KC_MS_LEFT,    KC_MS_DOWN,  KC_MS_RIGHT,    KC_DEL,      KC_LEFT,       KC_DOWN,            KC_UP,        KC_RIGHT,        KC_NO,        _______,
-    _______,    TO(_QWERTY), KC_MS_BTN2,    KC_MS_WH_UP, KC_MS_WH_DOWN,  KC_SPACE,    KC_MS_BTN1,    KC_PAGE_DOWN,       KC_PAGE_UP,   KC_MS_ACCEL1,    KC_MS_ACCEL2, _______,
+    _______,    KC_NO,       MS_WHLL,    MS_UP,    MS_WHLR,  LCTL(KC_Q),  LALT(KC_LEFT), LCTL(LSFT(KC_TAB)), LCTL(KC_TAB), LALT(KC_RIGHT),  KC_NO,        _______,
+    _______,    KC_NO,       MS_LEFT,    MS_DOWN,  MS_RGHT,  KC_DEL,      KC_LEFT,       KC_DOWN,            KC_UP,        KC_RIGHT,        KC_NO,        _______,
+    _______,    TO(_QWERTY), MS_BTN2,    MS_WHLU,  MS_WHLD,  KC_SPACE,    MS_BTN1,       KC_PAGE_DOWN,       KC_PAGE_UP,   MS_ACL1,         MS_ACL2, _______,
     _______,    _______,     _______,       _______,     TO(_COLEMAK),        _______,               TO(_SYMBOLS),       _______,      _______,         _______,      _______
   ),
 
