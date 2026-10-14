@@ -94,93 +94,93 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Colemak dh
    * ,-----------------------------------------------------------------------------------.
-   * | Esc  |   Q  |   W  |   F  |   P  |   B  |   J  |   L  |   U  |   Y  |   ;  | Bksp |
+   * |   Q  |   W  |   F  |   P  |   B  | Esc  | Bksp |   J  |   L  |   U  |   Y  |   ;  |
    * |------+------+------+------+------+-------------+------+------+------+------+------|
-   * | Tab  |   A  |   R  |   S  |   T  |   G  |   M  |   N  |   E  |   I  |   O  |Enter |
+   * |   A  |   R  |   S  |   T  |   G  | Tab  | Enter|   M  |   N  |   E  |   I  |   O  |
    * |------+------+------+------+------+------|------+------+------+------+------+------|
-   * | Shift|   Z  |   X  |   C  |   D  |   V  |   K  |   H  |  , - |  . ! |  / _ |Ctrl  |
+   * |   Z  |   X  |   C  |   D  |   V  | (Num)| (Nav)|   K  |   H  |  , - |  . ! |  / _ |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |      |      | GUI  |(Symb)|    Space    |(Symb)| Alt  | Left |      |Right |
+   * |(Cole)|(Qwer)|  GUI | Space| Shift|  (ADJUST)   | Ctrl | Alt  | Bksp |  Del |(Symb)|
    * `-----------------------------------------------------------------------------------'
    */
   [_COLEMAK] = LAYOUT_planck_mit(
-    KC_ESC,        KC_Q,          KC_W,         KC_F,    KC_P,         KC_B,    KC_J,      KC_L,           KC_U,          KC_Y,    KC_SCLN, KC_BSPC,
-    KC_TAB,        KC_A,          KC_R,         KC_S,    KC_T,         KC_G,    KC_M,      KC_N,           KC_E,          KC_I,    KC_O,    KC_ENT,
-    OSM(MOD_LSFT), KC_Z,          KC_X,         KC_C,    KC_D,         KC_V,    KC_K,      KC_H,           KC_COMM,       KC_DOT,  KC_SLSH, OSM(MOD_LCTL),
-    KC_NO,         KC_NO,         KC_NO,        KC_LGUI, MO(_SYMBOLS),       KC_SPC,       TO(_SYMBOLS),   OSM(MOD_LALT), KC_LEFT, KC_NO,   KC_RIGHT
+    KC_Q,         KC_W,        KC_F,    KC_P,         KC_B,         KC_ESCAPE,     KC_BSPC,   KC_J,          KC_L,     KC_U,             KC_Y,             KC_SCLN,
+    KC_A,         KC_R,        KC_S,    KC_T,         KC_G,         KC_TAB,        KC_ENTER,  KC_M,          KC_N,     KC_E,             KC_I,             KC_O,
+    KC_Z,         KC_X,        KC_C,    KC_D,         KC_V,         TO(_NUMBERS),  TO(_NAV),  KC_K,          KC_H,     TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND),
+    TO(_COLEMAK), TO(_QWERTY), KC_LGUI, KC_SPC,       OSM(MOD_LSFT),    TO(_ADJUST),         OSM(MOD_LCTL), KC_RALT,  KC_BSPC,          KC_DEL,           TO(_SYMBOLS)
   ),
 
   /* Qwerty
    * ,-----------------------------------------------------------------------------------.
-   * | Esc  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
+   * |   Q  |   W  |   E  |   R  |   T  | Esc  | Bksp |   Y  |   U  |   I  |   O  |   P  |
    * |------+------+------+------+------+-------------+------+------+------+------+------|
-   * | Tab  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |Enter |
+   * |   A  |   S  |   D  |   F  |   G  | Tab  | Enter|   H  |   J  |   K  |   L  |   ;  |
    * |------+------+------+------+------+------|------+------+------+------+------+------|
-   * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Ctrl  |
+   * |   Z  |   X  |   C  |   V  |   B  | (Num)| (Nav)|   N  |   M  |   , - |  . ! |  / _|
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |      |      | GUI  |(Symb)|    Space    |(Symb)| Alt  | Left |      |Right |
+   * |(Cole)|(Qwer)|  GUI | Space| Shift|  (ADJUST)   | Ctrl | Alt  | Bksp |  Del |(Symb)|
    * `-----------------------------------------------------------------------------------'
    */
   [_QWERTY] = LAYOUT_planck_mit(
-    KC_ESC,        KC_Q,    KC_W,         KC_E,    KC_R,         KC_T,    KC_Y,      KC_U,         KC_I,          KC_O,    KC_P,    KC_BSPC,
-    KC_TAB,        KC_A,    KC_S,         KC_D,    KC_F,         KC_G,    KC_H,      KC_J,         KC_K,          KC_L,    KC_SCLN, KC_ENT,
-    OSM(MOD_LSFT), KC_Z,    KC_X,         KC_C,    KC_V,         KC_B,    KC_N,      KC_M,         KC_COMM,       KC_DOT,  KC_SLSH, OSM(MOD_LCTL),
-    KC_NO,         KC_NO,   KC_NO,        KC_LGUI, MO(_SYMBOLS),       KC_SPC,       TO(_SYMBOLS), OSM(MOD_LALT), KC_LEFT, KC_NO,   KC_RIGHT
+    KC_Q,    KC_W,      KC_E,    KC_R,    KC_T, _______, _______, KC_Y,  KC_U,  KC_I,             KC_O,             KC_P,
+    KC_A,    KC_S,      KC_D,    KC_F,    KC_G, _______, _______, KC_H,  KC_J,  KC_K,             KC_L,             KC_SCLN,
+    KC_Z,    KC_X,      KC_C,    KC_V,    KC_B, _______, _______, KC_N,  KC_M,  TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND),
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   ),
 
 
   /* Symbols
    * ,-----------------------------------------------------------------------------------.
-   * |      |      |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   =  |      |      |
+   * | Esc  |   @  |   #  |   $  |   %  | Esc  | Bksp |   ^  |   &  |   *  |   =  | Bksp |
    * |------+------+------+------+------+-------------+------+------+------+------+------|
-   * |      |      |   `  |   ~  |  Alt |  DEL |   \  |  {   |   }  |   |  |      |      |
+   * | Tab  |   `  |   ~  |  Alt |  DEL | Tab  | Enter|   \  |  {   |   }  |   |  | Enter|
    * |------+------+------+------+------+------|------+------+------+------+------+------|
-   * |      |(Kor) |  Cut | Copy | Undo |Paste |   [  |  (   |   )  |   ]  |TO(4) |      |
+   * |      |  Cut | Copy | Undo |Paste | (Num)| (Nav)|   [  |  (   |   )  |   ]  |      |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |      |      |      |(alph)|             |(Sym) | Alt* |      |      |      |
+   * |(Cole)|(Qwer)|  GUI | Space| Shift|  (ADJUST)   | Ctrl | Alt  | Bksp |  Del |(Symb)|
    * `-----------------------------------------------------------------------------------'
    */
   [_SYMBOLS] = LAYOUT_planck_mit(
-    _______, KC_NO,       KC_AT,      LSFT(KC_3),      LSFT(KC_4),     KC_PERC,     KC_CIRC,           KC_AMPR,          KC_ASTR,        KC_EQL,          KC_NO,    _______,
-    _______, KC_NO,       KC_GRAVE,   LSFT(KC_GRAVE),  KC_LALT,        KC_DEL,      TD(TD_BKSL_HME),   LSFT(KC_LBRC),    LSFT(KC_RBRC),  TD(TD_PIPE_END), KC_NO,    _______,
-    _______, TO(_QWERTY), LCTL(KC_X), LCTL(KC_C),      LCTL(KC_Z),     LCTL(KC_V),  KC_LBRC,           KC_LPRN,          KC_RPRN,        KC_RBRC,         TO(4),    _______,
-    _______, _______,     _______,    _______,         TO(_COLEMAK),          _______,                 TO(_NUMBERS),     KC_RALT,        _______,         _______,  _______
+    KC_ESCAPE,  KC_AT,     LSFT(KC_3),      LSFT(KC_4),   KC_PERC,     _______, _______, KC_CIRC,           KC_AMPR,          KC_ASTR,        KC_EQL,          KC_BSPC,
+    KC_TAB,     KC_GRAVE,   LSFT(KC_GRAVE),  KC_LALT,      KC_DEL,      _______, _______, TD(TD_BKSL_HME),   LSFT(KC_LBRC),    LSFT(KC_RBRC),  TD(TD_PIPE_END), KC_ENTER,
+    KC_NO,      LCTL(KC_X), LCTL(KC_C),      LCTL(KC_Z),   LCTL(KC_V),  _______, _______, KC_LBRC,           KC_LPRN,          KC_RPRN,        KC_RBRC,         KC_NO,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   ),
 
   /* Numbers and volume
    * ,-----------------------------------------------------------------------------------.
-   * |      |      | V D  | V U  |  *   |  +   |./F11 |  7/F | 8/F  | 9/F  |      |      |
+   * | Esc  | V D  | V U  |  *   |  +   | Esc  | Bksp |./F11 |  7/F | 8/F  | 9/F  | Bksp |
    * |------+------+------+------+------+-------------+------+------+------+------+------|
-   * |      |      | Mute |  ;   |  /   |  -   |./F12 |  4/F | 3/F  | 6/F  |      |      |
+   * | Tab  | Mute |  ;   |  /   |  -   | Tab  | Enter|./F12 |  4/F | 3/F  | 6/F  | Enter|
    * |------+------+------+------+------+------|------+------+------+------+------+------|
-   * |      |(Kor) |      |  ,   |  =   |      |  0   |  1/F | 2/F  | 3/F  |TO(4) |      |
+   * |      |      |  ,   |  =   |      | (Num)| (Nav)|  0   |  1/F | 2/F  | 3/F  |      |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |      |      |      |(alph)|             |(Sym) |  0   |      |      |      |
+   * |(Cole)|(Qwer)|  GUI | Space| Shift|  (ADJUST)   | Ctrl | Alt  | Bksp |  Del |(Symb)|
    * `-----------------------------------------------------------------------------------'
    */
   [_NUMBERS] = LAYOUT_planck_mit(
-    _______,    KC_NO,       KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, LSFT(KC_8),   LSFT(KC_EQL), TD(TD_DOT_F11),  TD(TD_7_F7),  TD(TD_8_F8), TD(TD_9_F9),    KC_NO,   _______,
-    _______,    KC_NO,       KC_MUTE,           KC_SCLN,         KC_SLSH,      KC_MINS,      TD(TD_DOT_F12),  TD(TD_4_F4),  TD(TD_5_F5), TD(TD_6_F6),    KC_NO,   _______,
-    _______,    TO(_QWERTY), KC_NO,             KC_COMM,         KC_EQL,       KC_NO,        KC_0,            TD(TD_1_F1),  TD(TD_2_F2), TD(TD_3_F3),    TO(4),   _______,
-    _______,    _______,     _______,           _______,         TO(_COLEMAK),        _______,                TO(_SYMBOLS), KC_0,        _______,        _______, _______
+    KC_ESCAPE, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, LSFT(KC_8),   LSFT(KC_EQL), _______, _______, TD(TD_DOT_F11),  TD(TD_7_F7),  TD(TD_8_F8), TD(TD_9_F9),    KC_BSPC,
+    KC_TAB,    KC_MUTE,           KC_SCLN,         KC_SLSH,      KC_MINS,      _______, _______, TD(TD_DOT_F12),  TD(TD_4_F4),  TD(TD_5_F5), TD(TD_6_F6),    KC_ENTER,
+    KC_NO,     KC_NO,             KC_COMM,         KC_EQL,       KC_NO,        _______, _______, KC_0,            TD(TD_1_F1),  TD(TD_2_F2), TD(TD_3_F3),    KC_NO,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   ),
 
   /* Navigation
    * ,-----------------------------------------------------------------------------------.
-   * |      |      | S L  │ M U  │ S R  │ CtQ  | Bck  │ Pre  │ Nex  │ Fwd  |      |      |
+   * | Esc  | S L  │ M U  │ S R  │ CtQ  | Esc  | Bksp | Bck  │ Pre  │ Nex  │ Fwd  | Bksp |
    * |------+------+------+------+------+-------------+------+------+------+------+------|
-   * |      |      | M L  │ M D  │ M R  │ DEL  | LFT  │ DWN  │  UP  │ RHT  |      |      |
+   * | Tab  || M L  │ M D  │ M R  │ DEL  | Tab  | Enter| LFT  │ DWN  │  UP  │ RHT  | Enter|
    * |------+------+------+------+------+------|------+------+------+------+------+------|
-   * |      |(Kor) | RBn  │ S U  │ S D  │ Spc  | LBn  │ PDn  │ PUp  │ Ac2  │ Ac3  |      |
+   * |      | RBn  │ S U  │ S D  │ Spc  | (Num)| (Nav)| LBn  │ PDn  │ PUp  │ Ac2  │ Ac3  |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |      |      |      |(alph)|             |(Sym) |      |      |      |      |
+   * |(Cole)|(Qwer)|  GUI | Space| Shift|  (ADJUST)   | Ctrl | Alt  | Bksp |  Del |(Symb)|
    * `-----------------------------------------------------------------------------------'
    */
   [_NAV] = LAYOUT_planck_mit(
-    _______,    KC_NO,       MS_WHLL,    MS_UP,    MS_WHLR,  LCTL(KC_Q),  LALT(KC_LEFT), LCTL(LSFT(KC_TAB)), LCTL(KC_TAB), LALT(KC_RIGHT),  KC_NO,        _______,
-    _______,    KC_NO,       MS_LEFT,    MS_DOWN,  MS_RGHT,  KC_DEL,      KC_LEFT,       KC_DOWN,            KC_UP,        KC_RIGHT,        KC_NO,        _______,
-    _______,    TO(_QWERTY), MS_BTN2,    MS_WHLU,  MS_WHLD,  KC_SPACE,    MS_BTN1,       KC_PAGE_DOWN,       KC_PAGE_UP,   MS_ACL1,         MS_ACL2, _______,
-    _______,    _______,     _______,       _______,     TO(_COLEMAK),        _______,               TO(_SYMBOLS),       _______,      _______,         _______,      _______
+    KC_ESCAPE, MS_WHLL,    MS_UP,    MS_WHLR,  LCTL(KC_Q),  _______, _______, LALT(KC_LEFT), LCTL(LSFT(KC_TAB)), LCTL(KC_TAB), LALT(KC_RIGHT),  KC_BSPC,
+    KC_TAB,    MS_LEFT,    MS_DOWN,  MS_RGHT,  KC_DEL,      _______, _______, KC_LEFT,       KC_DOWN,            KC_UP,        KC_RIGHT,        KC_ENTER,
+    KC_NO,     MS_BTN2,    MS_WHLU,  MS_WHLD,  KC_SPACE,    _______, _______, MS_BTN1,       KC_PAGE_DOWN,       KC_PAGE_UP,   MS_ACL1,         MS_ACL2,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   ),
 
   /* Adjust (Lower + Raise)
