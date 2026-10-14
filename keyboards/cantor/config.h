@@ -7,6 +7,14 @@
 #define SERIAL_USART_TX_PIN B6     // USART TX pin
 #define SERIAL_USART_RX_PIN B7     // USART RX pin
 
+#ifdef MOUSEKEY_ENABLE
+  #define MOUSEKEY_INTERVAL 20
+  #define MOUSEKEY_MAX_SPEED 5
+  #define MOUSEKEY_TIME_TO_MAX 60
+#endif
+
+#define ONESHOT_TIMEOUT 5000
+
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
