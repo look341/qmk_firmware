@@ -107,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,         KC_W,        KC_F,    KC_P,         KC_B,         KC_ESCAPE,     KC_BSPC,   KC_J,          KC_L,     KC_U,             KC_Y,             KC_SCLN,
     KC_A,         KC_R,        KC_S,    KC_T,         KC_G,         KC_TAB,        KC_ENTER,  KC_M,          KC_N,     KC_E,             KC_I,             KC_O,
     KC_Z,         KC_X,        KC_C,    KC_D,         KC_V,         TO(_NUMBERS),  TO(_NAV),  KC_K,          KC_H,     TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND),
-    TO(_COLEMAK), TO(_QWERTY), KC_LGUI, KC_SPC,       OSM(MOD_LSFT),    TO(_ADJUST),         OSM(MOD_LCTL), KC_RALT,  KC_BSPC,          KC_DEL,           TO(_SYMBOLS)
+    TO(_COLEMAK), TO(_QWERTY), KC_LGUI, KC_SPC,       OSM(MOD_LSFT),    TO(_ADJUST),         OSM(MOD_LCTL),  KC_RALT,  KC_BSPC,          KC_DEL,           TO(_SYMBOLS)
   ),
 
   /* Qwerty
@@ -169,7 +169,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,-----------------------------------------------------------------------------------.
    * | Esc  | S L  │ M U  │ S R  │ CtQ  | Esc  | Bksp | Bck  │ Pre  │ Nex  │ Fwd  | Bksp |
    * |------+------+------+------+------+-------------+------+------+------+------+------|
-   * | Tab  || M L  │ M D  │ M R  │ DEL  | Tab  | Enter| LFT  │ DWN  │  UP  │ RHT  | Enter|
+   * | Tab  || M L  │ M D  │ M R │ DEL  | Tab  | Enter| LFT  │ DWN  │  UP  │ RHT  | Enter|
    * |------+------+------+------+------+------|------+------+------+------+------+------|
    * |      | RBn  │ S U  │ S D  │ Spc  | (Num)| (Nav)| LBn  │ PDn  │ PUp  │ Ac2  │ Ac3  |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -185,20 +185,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Adjust (Lower + Raise)
    * ,-----------------------------------------------------------------------------------.
-   * |      | Reset|      |      |      |      |      |      |      |      |      |  Del |
+   * |      |      |      |      |      |      |      |      |      |      |      |      |
    * |------+------+------+------+------+-------------+------+------+------+------+------|
-   * |      |      |      |Aud on|Audoff|AGnorm|AGswap|Qwerty|Colemk|Dvorak|Plover|      |
+   * | (Nav)| (Num)|(Symb)|Colemk|Qwerty|AGnorm|AGswap|Qwerty|Colemk|(Symb)| (Num)| (Nav)|
    * |------+------+------+------+------+------|------+------+------+------+------+------|
-   * |      |Voice-|Voice+|Mus on|Musoff|MIDIon|MIDIof|      |      |      |      |      |
+   * |      |      |      |      |      |      |      |      |      |      |      |      |
    * |------+------+------+------+------+------+------+------+------+------+------+------|
    * |      |      |      |      |      |             |      |      |      |      |      |
    * `-----------------------------------------------------------------------------------'
    */
   [_ADJUST] = LAYOUT_planck_mit(
-    _______, QK_BOOT, DB_TOGG, _______, _______, _______, _______, _______, _______,  _______, _______, KC_DEL ,
-    _______, _______, MU_NEXT, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK,  DVORAK,  PLOVER,  _______,
-    _______, AU_PREV, AU_NEXT, MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______,     _______,      _______, _______,  _______, _______, _______
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO,
+    TO(_NAV), TO(_NUMBERS), TO(_SYMBOLS), TO(_COLEMAK),   TO(_QWERTY),  KC_NO, KC_NO, TO(_QWERTY),  TO(_COLEMAK),  TO(_SYMBOLS),  TO(_NUMBERS),  TO(_NAV),
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, _______, _______,  KC_NO, KC_NO, KC_NO,
+    _______, _______, KC_NO, KC_NO, KC_NO,     KC_NO,      KC_NO, KC_NO,  KC_NO, KC_NO, _______
   )
 
 };
